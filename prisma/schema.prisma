@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id       String     @id @default(cuid())
+  name     String
+  slug     String     @unique
+  order    Int        @default(0)
+  items    MenuItem[]
+}
+
+model MenuItem {
+  id          String   @id @default(cuid())
+  categoryId  String
+  category    Category @relation(fields: [categoryId], references: [id])
+  name        String
+  slug        String   @unique
+  description String
+  priceBs     Float
+  image       String?
+  // comma-separated tags, e.g. "signature,spicy,double"
+  tags        String   @default("")
+  isSignature Boolean  @default(false)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model Combo {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String
+  priceBs     Float
+  image       String?
+  // comma-separated included items
+  items       String   @default("")
+  badge       String?
+  isSignature Boolean  @default(false)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model Location {
+  id       String @id @default(cuid())
+  name     String
+  address  String
+  phone    String
+  hours    String
+  mapUrl   String
+  order    Int    @default(0)
+}
+
+model Testimonial {
+  id       String @id @default(cuid())
+  author   String
+  source   String
+  text     String
+  rating   Int    @default(5)
+  order    Int    @default(0)
+}
