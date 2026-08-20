@@ -49,3 +49,35 @@ Stage Summary:
 - All AI-generated images REMOVED. Site now uses 8 REAL food photographs sourced via web image-search.
 - All menu/brand data now anchored to Burger Match's real Instagram (@burgermatch_bo) + Linktree: 4 locations, confirmed combos (49/59 Bs), real tagline, real hours, real phones.
 - Artifacts updated: prisma/seed.ts (real images + 4 locations), src/components/site/hero.tsx (real hero photo), src/components/site/{locations,cta-footer}.tsx + src/app/api/info/route.ts (clarified hours), public/menu/real/ (8 real photos), old public/menu/*.png deleted.
+
+---
+Task ID: 3
+Agent: Z.ai Code (main orchestrator)
+Task: Replace all remaining images with REAL content scraped directly from Burger Match's Instagram account (https://www.instagram.com/burgermatch_bo/?hl=es) — including real photos, real videos, and the real logo. Remove all AI-generated and random web-search images.
+
+Work Log:
+- Direct curl of Instagram profile → HTTP 429 (blocked by Instagram bot detection).
+- Used z-ai page_reader (headless browser backend) to fetch the Instagram profile page HTML (810KB).
+- Parsed the raw HTML and extracted 16 real scontent.cdninstagram.com image URLs (real post photos, 640x640) + the og:image (profile pic / logo).
+- Extracted 7 real Instagram reel shortcodes (DaOcyeVx5Ob, DcM4RX4uet4, DbZQFeuO7JC, Dai51gSPRce, DawSrPfuodw, Db_-Is4uSDD, DbjQSluv6Gw).
+- Downloaded the real logo (public/brand/logo.jpg) — the actual @burgermatch_bo profile pic showing "BURGER MATCH" in bold black/yellow. VLM confirmed: "BURGER MATCH logo, bold black and white capital letters on bright yellow background".
+- Downloaded 12 real Instagram post photos to public/ig/post_01..12.jpg. VLM identified each: post_03/post_12 = burger with egg, post_05/08/09/11 = combo meals with fries, post_06/10 = branding, post_01/02/04/07 = restaurant interior/people.
+- Attempted to download reel .mp4 files directly — HTTP 403 (Instagram requires signed/expiring URLs + session). Pivoted to Instagram's OFFICIAL public embed iframe (instagram.com/reel/{shortcode}/embed/) which is the legitimate way websites display real Instagram videos.
+- Removed ALL old AI-generated images (public/menu/ deleted entirely) and all random web-search images.
+- Updated prisma/seed.ts: all 7 burgers + 4 combos + 4 sides now point to real /ig/post_XX.jpg images.
+- Updated hero.tsx to use /ig/post_09.jpg (real combo photo).
+- Updated nav.tsx + cta-footer.tsx to use the real /brand/logo.jpg (replaced the fake "B" letter badge).
+- Created new InstagramFeed section (src/components/site/instagram-feed.tsx) with:
+  * 3 real embedded Instagram reels (iframe embeds showing actual @burgermatch_bo videos)
+  * 12-photo gallery grid using all real scraped Instagram post photos
+  * Attribution to @burgermatch_bo
+- Added "Instagram" nav link and placed the section between Testimonials and CTA.
+- Re-seeded DB; lint clean (0 errors, 0 warnings).
+- Agent Browser verification: logo loads (100px natural, real profile pic), hero uses real IG photo, Instagram section has 12 gallery images + 3 reel iframe embeds, no runtime errors.
+- VLM verification: "logo features yellow circle with black text... BURGERMATCH in yellow" (real logo confirmed), "hero image is a real photograph of a burger being held in a restaurant setting" (real photo confirmed), "embedded Instagram reel videos with visible video frames... real photos of food preparation, burgers, fries" (real videos confirmed).
+
+Stage Summary:
+- ZERO AI-generated images remain. ZERO random web-search images remain.
+- The site now uses ONLY: (1) the real @burgermatch_bo Instagram profile pic as the logo, (2) 12 real Instagram post photos for the menu cards and gallery, (3) 3 real Instagram reel videos embedded via official Instagram embed iframes.
+- All real content scraped directly from https://www.instagram.com/burgermatch_bo/?hl=es.
+- Artifacts: public/brand/logo.jpg (real logo), public/ig/post_01..12.jpg (12 real IG photos), public/ig/videos/ (empty — videos embedded via iframe instead), src/components/site/instagram-feed.tsx (new section), prisma/seed.ts (updated image paths), src/components/site/{nav,hero,cta-footer}.tsx (real logo + real photos).

@@ -89,7 +89,7 @@ export function Hero() {
               className="relative z-10 h-[44vh] w-[44vh] sm:h-[52vh] sm:w-[52vh] max-h-[560px] max-w-[560px]"
             >
               <img
-                src="/menu/real/hero.jpeg"
+                src="/ig/post_09.jpg"
                 alt="Hamburguesa Bacon Cheese Burger doble de Burger Match"
                 className="h-full w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
                 draggable={false}

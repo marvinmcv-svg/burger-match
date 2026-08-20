@@ -9,7 +9,7 @@ const LINKS = [
   { label: "Menú", href: "#menu" },
   { label: "Combos", href: "#combos" },
   { label: "Sucursales", href: "#sucursales" },
-  { label: "Opiniones", href: "#opiniones" },
+  { label: "Instagram", href: "#instagram" },
 ];
 
 const PEDIDOSYA =
@@ -37,11 +37,15 @@ export function Nav() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 sm:h-20 items-center justify-between">
-          {/* Logo */}
+          {/* Logo — real Instagram profile pic from @burgermatch_bo */}
           <a href="#top" className="group flex items-center gap-3">
-            <span className="relative inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-[#ffd60a] text-black font-display text-2xl sm:text-3xl leading-none shadow-[0_0_25px_-5px_rgba(255,214,10,0.7)] transition-transform group-hover:rotate-[-6deg]">
-              B
-              <span className="absolute -right-1 -bottom-1 h-2 w-2 rounded-full bg-[#ffd60a]" />
+            <span className="relative inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center overflow-hidden rounded-xl bg-[#ffd60a] shadow-[0_0_25px_-5px_rgba(255,214,10,0.7)] transition-transform group-hover:rotate-[-6deg]">
+              <img
+                src="/brand/logo.jpg"
+                alt="Logo de Burger Match"
+                className="h-full w-full object-cover"
+                draggable={false}
+              />
             </span>
             <span className="font-display text-xl sm:text-2xl tracking-tight text-white leading-none">
               BURGER<span className="text-[#ffd60a]">MATCH</span>

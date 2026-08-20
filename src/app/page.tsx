@@ -6,6 +6,7 @@ import { MenuSection } from "@/components/site/menu-section";
 import { Combos } from "@/components/site/combos";
 import { Locations } from "@/components/site/locations";
 import { Testimonials } from "@/components/site/testimonials";
+import { InstagramFeed } from "@/components/site/instagram-feed";
 import { Cta, Footer } from "@/components/site/cta-footer";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <Combos />
         <Locations />
         <Testimonials />
+        <InstagramFeed />
         <Cta />
       </main>
       <Footer />

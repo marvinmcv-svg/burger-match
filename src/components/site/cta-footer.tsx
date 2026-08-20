@@ -124,8 +124,13 @@ export function Footer() {
             {/* brand */}
             <div className="lg:col-span-2">
               <a href="#top" className="flex items-center gap-3">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#ffd60a] text-black font-display text-2xl leading-none">
-                  B
+                <span className="inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-[#ffd60a]">
+                  <img
+                    src="/brand/logo.jpg"
+                    alt="Logo de Burger Match"
+                    className="h-full w-full object-cover"
+                    draggable={false}
+                  />
                 </span>
                 <span className="font-display text-2xl tracking-tight text-white">
                   BURGER<span className="text-[#ffd60a]">MATCH</span>
