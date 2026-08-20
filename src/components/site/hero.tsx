@@ -89,7 +89,7 @@ export function Hero() {
               className="relative z-10 h-[44vh] w-[44vh] sm:h-[52vh] sm:w-[52vh] max-h-[560px] max-w-[560px]"
             >
               <img
-                src="/menu/hero-burger.png"
+                src="/menu/real/hero.jpeg"
                 alt="Hamburguesa Bacon Cheese Burger doble de Burger Match"
                 className="h-full w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
                 draggable={false}
@@ -142,7 +142,7 @@ export function Hero() {
             <span className="text-[#ffd60a] text-glow-yellow">HACEN MATCH</span>
           </motion.h1>
           <p className="max-w-xl text-sm sm:text-base text-white/70">
-            Carne 100% res, pan brioche y sabores que se eligen como en una cita perfecta. Abierto Lunes a Lunes en Equipetrol y Beni.
+            Carne 100% res, pan brioche y sabores que se eligen como en una cita perfecta. Abierto todos los días en Equipetrol, Beni, La Chonta y Radial 19.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a

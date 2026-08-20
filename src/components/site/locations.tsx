@@ -33,7 +33,7 @@ export function Locations() {
             </h2>
           </div>
           <p className="max-w-sm text-sm text-white/60">
-            Dos canchas en Santa Cruz de la Sierra. Abierto Lunes a Lunes, de 11:00 AM a 11:00 PM.
+            Cuatro canchas en Santa Cruz de la Sierra. Abierto todos los días, de 11:00 AM a 11:00 PM.
           </p>
         </div>
 

@@ -19,7 +19,7 @@ export async function GET() {
       pedidosya:
         "https://www.pedidosya.com.bo/restaurantes/santa-cruz-de-la-sierra/burger-match--equipetrol-7c2c6364-a718-403c-aaf2-59c7e39598cf-menu",
       phone: "+591 77670931",
-      hours: "Lunes a Lunes · 11:00 AM – 11:00 PM",
+      hours: "Lun a Dom · 11:00 AM – 11:00 PM",
     },
     locations,
     testimonials,

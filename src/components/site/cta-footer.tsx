@@ -161,7 +161,7 @@ export function Footer() {
               <ul className="mt-4 space-y-3 text-sm text-white/60">
                 <li>Equipetrol · +591 77670931</li>
                 <li>Beni · +591 77616377</li>
-                <li>Lun a Lun · 11:00 AM – 11:00 PM</li>
+                <li>Lun a Dom · 11:00 AM – 11:00 PM</li>
                 <li className="flex gap-3 pt-1">
                   <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-[#ffd60a]">
                     <Instagram size={18} />
